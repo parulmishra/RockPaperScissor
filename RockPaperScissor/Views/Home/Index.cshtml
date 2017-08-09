@@ -1,0 +1,48 @@
+@{
+  Layout = "_Layout";
+}
+<div class="jumbotron">
+  <h1>Welcome to the Rock Paper Scissor Game</h1>
+  <form action="/play" method="post">
+    <div class="row">
+      <div class="col-md-4">
+      <div class="form-group">
+        <label for="rock">ROCK</label>
+        <button value="Rock" name="choice" ><img src="img/Rock.jpg" /></button>
+      </div>
+
+      <div class="form-group">
+        <label for="rock">PAPER</label>
+        <button value="Paper" name="choice"><img src="img/Paper.jpg" /></button>
+      </div>
+
+      <div class="form-group">
+        <label for="rock">SCISSOR</label>
+        <button value="Scissor" name="choice"><img src="img/Scissor.jpg"/></button>
+      </div>
+
+      <div id="userchoice" class="well">
+        @if(Model != null)
+        {
+          <p>Your Choice is :@Model.GetUserChoice()</p>
+        }
+      </div>
+
+      <div id="compchoice"class="well">
+        @if(Model != null)
+        {
+          <p>Computer Choice is :@Model.GetComputerChoice()</p>
+        }
+      </div>
+
+      <div id="result" class="well">
+        @if(Model != null)
+        {
+          <p>The result is: @Model.Play()</p>
+        }
+      </div>
+    </div>
+  </div>
+    <button type="submit">Play</button>
+  </form>
+</div>
