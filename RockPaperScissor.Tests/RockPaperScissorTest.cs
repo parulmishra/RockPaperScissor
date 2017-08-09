@@ -80,5 +80,60 @@ namespace RockPaperScissor.Tests
       //Assert
       Assert.AreEqual(expected, actual);
     }
+    [TestMethod]
+    public void Play_ShouldReturnsRandomResultswithRandomComputerInputsonUserRock_String()
+    {
+      string expected = "";
+      RockPaperScissorClass rps = new RockPaperScissorClass("Rock");
+      string compChoice = rps.GetComputerChoice();
+      if(compChoice != null)
+      {
+        if(compChoice == "Rock")
+        expected = "Draw";
+        else if(compChoice == "Scissor")
+        expected = "User Wins";
+        else if(compChoice == "Paper")
+        expected = "Computer Wins";
+      }
+      string actual = rps.Play();
+      Assert.AreEqual(expected, actual);
+    }
+    [TestMethod]
+    public void Play_ShouldReturnsRandomResultswithRandomComputerInputsonUserPaper_String()
+    {
+      string expected = "";
+      RockPaperScissorClass rps = new RockPaperScissorClass("Rock");
+      string compChoice = rps.GetComputerChoice();
+      if(compChoice != null)
+      {
+        if(compChoice == "Paper")
+        expected = "Computer Wins";
+        else if(compChoice == "Rock")
+        expected = "Draw";
+        else if(compChoice == "Scissor")
+        expected = "User Wins";
+      }
+      string actual = rps.Play();
+      Assert.AreEqual(expected, actual);
+    }
+    [TestMethod]
+    public void Play_ShouldReturnsRandomResultswithRandomComputerInputsonUserScissor_String()
+    {
+      string expected = "";
+      RockPaperScissorClass rps = new RockPaperScissorClass("Scissor");
+      string compChoice = rps.GetComputerChoice();
+      if(compChoice != null)
+      {
+        if(compChoice == "Scissor")
+        expected = "Draw";
+        else if(compChoice == "Paper")
+        expected = "User Wins";
+        else if(compChoice == "rock")
+        expected = "Computer Wins";
+      }
+      string actual = rps.Play();
+      Assert.AreEqual(expected, actual);
+    }
+
   }
 }
