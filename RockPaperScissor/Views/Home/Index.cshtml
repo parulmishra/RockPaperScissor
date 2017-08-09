@@ -6,19 +6,23 @@
   <form action="/play" method="post">
     <div class="row">
       <div class="col-md-4">
+        <input type="hidden" id="valueHolder" name="choice" value="">
       <div class="form-group">
         <label for="rock">ROCK</label>
-        <input type="radio" value="Rock" name="choice" ><img src="img/Rock.jpg" />
+        <input type="hidden" value="Rock" >
+        <img src="img/Rock.jpg" />
       </div>
 
       <div class="form-group">
         <label for="rock">PAPER</label>
-        <input type="radio" value="Paper" name="choice"><img src="img/Paper.jpg" />
+        <input type="hidden" value="Paper">
+        <img src="img/Paper.jpg" />
       </div>
 
       <div class="form-group">
         <label for="rock">SCISSOR</label>
-        <input type="radio" value="Scissor" name="choice"><img src="img/Scissor.jpg"/>
+        <input type="hidden" value="Scissor">
+        <img src="img/Scissor.jpg"/>
       </div>
 
       <div id="userchoice" class="well">
@@ -26,6 +30,7 @@
         {
           <p>Your Choice is :@Model.GetUserChoice()</p>
         }
+        <p id="tempdisplay">Your Choice is :<span id="tempPlayer"></span></p>
       </div>
 
       <div id="compchoice"class="well">

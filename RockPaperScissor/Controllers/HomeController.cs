@@ -19,5 +19,6 @@ namespace RockPaperScissor.Controllers
       RockPaperScissorClass rps = new RockPaperScissorClass(userChoice);
       return View("Index",rps);
     }
+
   }
 }
